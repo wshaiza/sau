@@ -2,6 +2,9 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\bootstrap\Modal; 
+use yii\bootstrap\Button; 
+
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\DepartmentSearch */
@@ -17,7 +20,24 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Create Department', ['create'], ['class' => 'btn btn-success']) ?>
+        
+        <?= 
+             Button::widget([
+             'label' => 'Create Department',
+                'options' => ['class' => 'btn btn-success','id'=>'createDeptButton'],
+                ]);
+
+        ?>
     </p>
+    <?php
+        Modal::begin([
+        'header' => '<h2>Hello world</h2>',
+        ]);
+
+        echo 'Say hello...';
+
+        Modal::end();
+    ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
