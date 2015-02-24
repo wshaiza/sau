@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\bootstrap\Modal; 
 use yii\bootstrap\Button; 
-
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\DepartmentSearch */
@@ -19,26 +19,18 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Department', ['create'], ['class' => 'btn btn-success']) ?>
-        
+      
         <?= 
              Button::widget([
              'label' => 'Create Department',
-                'options' => ['class' => 'btn btn-success','id'=>'createDeptButton'],
+                'options' => ['class' => 'btn btn-success','id'=>'createDeptButton',
+                              'data-url'=>Url::to(['department/create'])
+                              ],
                 ]);
 
         ?>
     </p>
-    <?php
-        Modal::begin([
-        'header' => '<h2>Hello world</h2>',
-        ]);
-
-        echo 'Say hello...';
-
-        Modal::end();
-    ?>
-
+    
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -51,5 +43,25 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
+
+
+    <?php 
+
+        //modal for Create Department
+        Modal::begin([
+        'header' => '<h2>Create Department</h2>', 
+        'footer' => Button::widget([
+                            'label'=> 'close',
+                            'options'=> ['class'=>'btn ','data-dismiss'=>'modal']
+                                ]),
+        'id' => 'modalDeptCreate'
+
+        ]);
+
+        echo "<div id='deptCreateModalContainer'> </div>";
+
+        Modal::end();
+    ?>
+
 
 </div>

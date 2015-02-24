@@ -1,10 +1,13 @@
 $(function() {
 	$('#createDeptButton').click( function () {
 
-		alert("working");
-		
+		$('#modalDeptCreate').modal('show');
 
+		$("div.modal-body").find("#deptCreateModalContainer").load($(this).data('url').toString());
+	
 	});
+
+	
 
 
 });
