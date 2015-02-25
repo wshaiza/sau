@@ -11,7 +11,7 @@ $this->title = 'My Yii Application';
         <p class="lead">You have successfully created your Yii-powered application.</p>
  -->
         <p><a class="btn btn-lg btn-success" href="<?= Url::to(['department/index'])  ?>">Department</a></p>
-        <p><a class="btn btn-lg btn-success" href="#">Course</a></p>
+        <p><a class="btn btn-lg btn-success" href="<?= Url::to(['course/index'])  ?>">Course</a></p>
         <p><a class="btn btn-lg btn-success" href="#">Student</a></p>
         <p><a class="btn btn-lg btn-success" href="#">***********</a></p>
         
