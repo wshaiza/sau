@@ -1,4 +1,5 @@
 $(function() {
+	//initiate create department modal
 	$('#createDeptButton').click( function () {
 
 		$('#modalDeptCreate').modal('show');
@@ -8,6 +9,4 @@ $(function() {
 	});
 
 	
-
-
 });
