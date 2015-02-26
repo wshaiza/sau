@@ -61,12 +61,13 @@ class CourseController extends Controller
     public function actionCreate()
     {
         $model = new Course();
-
+      
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->course_code]);
         } else {
             return $this->renderAjax('create', [
                 'model' => $model,
+  
             ]);
         }
     }

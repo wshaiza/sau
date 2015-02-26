@@ -4,7 +4,8 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\bootstrap\Button; 
 use yii\helpers\Url;
-use yii\bootstrap\Modal;  
+use yii\bootstrap\Modal; 
+use app\models\Course; 
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\CourseSearch */
@@ -62,5 +63,10 @@ $this->params['breadcrumbs'][] = $this->title;
         echo "<div id='courseCreateModalContainer'> </div>";
 
         Modal::end();
+        
+    //    print_r(Course::getDept);
+
     ?>    
+
+
 </div>
