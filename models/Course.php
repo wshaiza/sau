@@ -34,7 +34,8 @@ class Course extends \yii\db\ActiveRecord
             [['course_code', 'course_title', 'dept_id'], 'required'],
             [['course_code'], 'string', 'max' => 15],
             [['course_title'], 'string', 'max' => 50],
-            [['dept_id'], 'string', 'max' => 10]
+            [['dept_id'], 'string', 'max' => 10],
+            [['dept_id'],'safe']
         ];
     }
 
@@ -46,7 +47,7 @@ class Course extends \yii\db\ActiveRecord
         return [
             'course_code' => 'Course Code',
             'course_title' => 'Course Title',
-            'dept_id' => 'Dept ID',
+            'dept_id' => 'Dept Name',
         ];
     }
 

@@ -20,9 +20,9 @@ use app\models\Department;
     <?= $form->field($model, 'course_title')->textInput(['maxlength' => 50]) ?>
 
     <?= $form->field($model, 'dept_id')->dropDownList(
-    													ArrayHelper::map(Department::find()->all(),'dept_id','dept_name'), 
-    													["prompt"=> "Select Dept"]
-    												);  ?>
+    				    ArrayHelper::map(Department::find()->all(),'dept_id','dept_name'), 
+    					["prompt"=> "Select Dept"]
+    					);  ?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

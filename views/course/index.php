@@ -6,6 +6,7 @@ use yii\bootstrap\Button;
 use yii\helpers\Url;
 use yii\bootstrap\Modal; 
 use app\models\Course; 
+use yii\widgets\Pjax;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\CourseSearch */
@@ -33,7 +34,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
     </p>
 
-    <?= GridView::widget([
+ <?php Pjax::begin();  ?>
+    <?= 
+
+    GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
@@ -41,12 +45,21 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'course_code',
             'course_title',
-            'dept_id',
-
+            'dept.dept_id',
+            'dept.dept_name',
+            [
+                'attribute'=>'dept_id',
+                'value'=>'dept.dept_name'    
+            ],
+            //To do: search functionality with dept name isn't working yet ...
+           /* [ 
+              'attribute'=>'dept_id',
+              'value'=>'dept.dept_name'
+            ],*/
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
-
+<?php Pjax::end();  ?>
     <?php 
 
         //modal for Create Course
