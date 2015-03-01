@@ -12,7 +12,7 @@ $this->title = 'My Yii Application';
  -->
         <p><a class="btn btn-lg btn-success" href="<?= Url::to(['department/index'])  ?>">Department</a></p>
         <p><a class="btn btn-lg btn-success" href="<?= Url::to(['course/index'])  ?>">Course</a></p>
-        <p><a class="btn btn-lg btn-success" href="#">Student</a></p>
+        <p><a class="btn btn-lg btn-success" href="<?= Url::to(['student/index'])  ?>">Student</a></p>
         <p><a class="btn btn-lg btn-success" href="#">***********</a></p>
         
     </div>

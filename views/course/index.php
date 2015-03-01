@@ -77,7 +77,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
         Modal::end();
         
-    //    print_r(Course::getDept);
+   
 
     ?>    
 
